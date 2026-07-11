@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I Love My SIRI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 40px;
+      line-height: 1.6;
+      background-color: #fff0f5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 💞 Full-page zigzag watermark background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        repeating-linear-gradient(
+          -35deg,
+          rgba(255, 0, 0, 0.08) 0 60px,
+          transparent 60px 120px
+        );
+      z-index: -2;
+    }
+
+    body::after {
+      content: "I LOVE YOU SIRI I LOVE YOU SIRI I LOVE YOU SIRI I LOVE YOU SIRI I LOVE YOU SIRI I LOVE YOU SIRI I LOVE YOU SIRI I LOVE YOU SIRI I LOVE YOU SIRI I LOVE YOU SIRI";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 60px;
+      font-style: italic;
+      color: rgba(255, 0, 0, 0.08);
+      transform: rotate(-35deg);
+      text-align: center;
+      line-height: 1.8em;
+      z-index: -1;
+      pointer-events: none;
+      white-space: pre-wrap;
+    }
+
+    h1 {
+      color: red;
+      font-size: 3em;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .content {
+      margin-top: 30px;
+      text-align: left;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      white-space: pre-line;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,0,0,0.2);
+    }
+
+    .question {
+      margin-top: 40px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .options button {
+      margin: 10px;
+      background-color: pink;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .options button:hover {
+      transform: scale(1.1);
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      font-size: 1em;
+      margin-top: 20px;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
+  <h1>I ❤️ MY SIRI</h1>
+
+  <div class="content">
+
+​నా అందాల సిరికి నా ప్రేమ లేఖ,
+​“పరిచయమే వద్దు అనుకున్నా కానీ.. ప్రాణమై పోయావు...
+పలకరింపుతో సరిపెడదాం అనుకున్నా ప్రేమగా మారిపోయావు...
+మాటలు చాలు అనుకున్నా కానీ మనసులోకి చేరావు...
+​మొదట్లో నీతో మాట్లాడటం నార్మల్ ఏ అని అనుకున్నా...
+కానీ ఇప్పుడు రోజూ మొత్తం ఎవరితో మాట్లాడకపోయినా పర్లేదు...
+నీతో ఒక్కసారి మాట్లాడితే చాలు అనిపిస్తుంది.
+నా ఫోన్‌లో ఎన్నో మెసేజ్‌లు వచ్చినా... నీ మెసేజ్ చూసినప్పుడు మాత్రం నాకు తెలియకుండానే చిరునవ్వు వస్తుంది...
+​నువ్వు నా జీవితంలోకి వచ్చాక నా రోజులు మారిపోయాయి...
+ఒంటరిగా ఉండటం తగ్గింది... నవ్వడం పెరిగింది....
+​❤️ నువ్వు నా నీడవి కాదు... నిన్ను చీకటిలో వదిలేయడానికి...
+❤️ నువ్వు నా కళ్ళలో ఉండవు... నా కన్నీటి చుక్కవై జారిపోవడానికి...
+❤️ నువ్వు నా కలవి కాదు... మెలకువ రాగానే చెదిరిపోవడానికి...
+❤️ నువ్వు నా శ్వాసవి కాదు... ఒక్కసారి లోపలికి.. ఒక్కసారి బయటికి వెళ్ళడానికి...
+❤️ నువ్వు నా హృదయం ఎప్పుడూ... నాలోనే నా తోడనే ఉంటావు.
+నువ్వు కొట్టుకోవడం ఆగిపోతే నేను అక్కడితోనే అంతమైపోతాను.
+​చీకటిగా ఉన్న నా ప్రపంచంలోకి ఒక వెలుగులా వచ్చావు...
+ఖాళీగా ఉన్న నా హృదయాన్ని ప్రేమతో నింపేశావు.
+నీతో మాట్లాడితే నాకు ఆ రోజే తెలియదు.. కానీ రిప్లై లేట్ అయితే మాత్రం, ఒక్క నిమిషం కూడా గుండెల్లో భారంగా, భయంగా అనిపిస్తుంది...
+​“నీ గతం లో ఎవరు ఉన్నారో నాకు అవసరం లేదు...
+ఎందుకంటే నా గతం, ప్రెజెంట్, ఫ్యూచర్ మాత్రం నువ్వే పాప...."
+​నా ప్రేమ వచ్చిపోయే వర్షం కాదు.....
+ప్రతి రోజు నీ చుట్టూ ఉండే గాలి లాంటిది... అది కనిపించకపోవచ్చు కానీ....
+ప్రతి క్షణం నిన్నే ప్రేమిస్తూ ఉంటుంది....
+నీకు బాధగా అనిపించినప్పుడు ముందుగా గుర్తుకు వచ్చే పర్సన్ నేనే అవ్వాలి పాప...
+నువ్వు సంతోషంగా ఉంటే ఆ నవ్వుకి రీజన్ నేనే అవ్వాలి...
+​నీకు లవర్ లా మాత్రమే కాదు... బెస్ట్ ఫ్రెండ్ లా సేఫ్ ప్లేస్ అవుతా...
+ప్రతి సిట్యుయేషన్ లో నీ పక్కన నిలబడే పర్సన్ అవుతా...
+నన్ను నిజంగా లవ్ చేసే ఒక్క ఛాన్స్ ఇస్తే...
+నిన్ను ప్రేమించను... ప్రాణం లాగా చూసుకుంటాను పాప...
+​నాకు నువ్వు కావాలి.. నీలాంటి వాళ్ళు కాదు..
+నీకంటే బెటర్ ఉన్న వాళ్ళు కాదు నాకు నువ్వే కావాలి...!
+నేను నిన్ను ప్రేమించడం కనుక నేను చేసింది తప్పే అయితే...
+ఆ తప్పుకి నాకు శిక్ష కావాలి, అలాగే ఆ శిక్ష తర్వాత నువ్వే కావాలి...
+నిన్ను ప్రేమించడం తప్పు అని పదిమంది నన్ను పది రకాలుగా మాటలు అన్నా సరే...
+ఆ పదిమంది మాటలు విన్న తర్వాత కూడా నాకు నువ్వే కావాలి పాప.
+​పది నెలలు మోసి కన్న మీ అమ్మకి నువ్వు సొంతం అయితే...!
+ఇన్నాళ్ళుగా నా మనసులో మోస్తున్న నాకు సొంతమేగా....!
+ఇంతవరకు పెంచి పెద్ద చేసిన మీ అమ్మ నాన్న కోసం,
+నన్ను వద్దు అనుకునే అంత చేస్తూ ఉంటే....
+ఎవరో తెలియని నేను నిన్ను ప్రేమించి... నువ్వే నా ప్రాణం అనుకొని..
+నీతోనే నా 75 సంవత్సరాల జీవితాన్ని పంచుకోవాలని అనుకున్న నా కోసం నువ్వు ఎంత చేయాలి..!
+​నేను నా చివరి శ్వాస వరకు నీకు తోడుగా ధైర్యంగా ఉంటాను పాప. నాకు ఒక్క ఛాన్స్ ఇస్తావా పాప....❤️❤️❤️
+​
+                                                                          నీ ప్రేమతో,
+                                                                      గుర్రం పురుషోత్తం రెడ్డి
+ 
+  </div>
+
+  <div class="question">
+    Do you love me? 💖
+    <div class="options">
+      <button onclick="loveYes()">Yes</button>
+      <button onclick="loveNo()">No</button>
+    </div>
+  </div>
+
+  <p>Enter your response below:</p>
+  <input type="text" id="responseBox" placeholder="Type your reply here...">
+  <br>
+  <button onclick="showResponse()">Submit</button>
+
+  <p id="output"></p>
+
+ <script>
+  function showResponse() {
+    const response = document.getElementById("responseBox").value;
+    document.getElementById("output").innerText = "You replied: " + response;
+  }
+
+  function loveYes() {
+    alert("LOVE YOU TO SIRI 💕");
+  }
+
+  function loveNo() {
+    alert("Oh nooo 😢 But I’ll keep loving you anyway! PRIYA aka PELLAMA aka MADAM");
+  }
+</script>
