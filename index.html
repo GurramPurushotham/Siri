@@ -121,7 +121,7 @@
     .submit-btn {
       margin-top: 10px;
       padding: 8px 15px;
-      background-color: red;
+      background-color: #25D366; /* WhatsApp Green */
       color: white;
       border: none;
       border-radius: 5px;
@@ -190,8 +190,8 @@
 నీతోనే నా 75 సంవత్సరాల జీవితాన్ని పంచుకోవాలని అనుకున్న నా కోసం నువ్వు ఎంత చేయాలి..!
 నేను నా చివరి శ్వాస వరకు నీకు తోడుగా ధైర్యంగా ఉంటాను పాప. నాకు ఒక్క ఛాన్స్ ఇస్తావా పాప....❤️❤️❤️
  
-                                                            నీ ప్రేమతో,
-                                                       గుర్రం పురుషోత్తం రెడ్డి
+                                                   నీ ప్రేమతో,
+                                                గుర్రం పురుషోత్తం రెడ్డి
   </div>
 
   <div class="question">
@@ -205,22 +205,39 @@
   <p>Enter your response below:</p>
   <input type="text" id="responseBox" placeholder="Type your reply here...">
   <br>
-  <button class="submit-btn" onclick="showResponse()">Submit</button>
+  <button class="submit-btn" onclick="sendToWhatsApp()">Send via WhatsApp 💬</button>
 
   <p id="output"></p>
 
 <script>
-  function showResponse() {
-    const response = document.getElementById("responseBox").value;
-    document.getElementById("output").innerText = "You replied: " + response;
+  const phoneNumber = "919963881226";
+
+  function sendToWhatsApp() {
+    const response = document.getElementById("responseBox").value.trim();
+    if (response === "") {
+      alert("Please type a response first!");
+      return;
+    }
+    
+    document.getElementById("output").innerText = "Redirecting to WhatsApp...";
+    
+    // Encodes custom text and opens WhatsApp
+    const encodedMessage = encodeURIComponent("Siri's reply: " + response);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
   }
 
   function loveYes() {
     alert("LOVE YOU TOO SIRI 💕");
+    const encodedMessage = encodeURIComponent("I love you too Purushotham! 💕");
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
   }
 
   function loveNo() {
     alert("Oh nooo 😢 But I’ll keep loving you anyway! పాప....");
+    const encodedMessage = encodeURIComponent("No 😢 (But I read your letter!)");
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
   }
 </script>
 </body>
