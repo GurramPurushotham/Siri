@@ -69,8 +69,30 @@
       100% { transform: scale(1); }
     }
 
+    /* 🎵 Music Controls Styling */
+    .music-container {
+      margin: 15px auto;
+    }
+
+    .music-btn {
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .music-btn:hover {
+      transform: scale(1.05);
+      background-color: #ff0537;
+    }
+
     .content {
-      margin-top: 30px;
+      margin-top: 20px;
       text-align: left;
       max-width: 800px;
       margin-left: auto;
@@ -146,6 +168,16 @@
 <body>
   <h1>I ❤️ MY SIRI</h1>
 
+  <!-- 🎵 Audio Element & Toggle Button -->
+  <div class="music-container">
+    <audio id="bgMusic" loop autoplay>
+      <!-- Replace 'song.mp3' with your audio file path or URL -->
+      <source src="song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <button class="music-btn" id="musicToggle" onclick="toggleMusic()">🎵 Play Music</button>
+  </div>
+
   <div class="content">
 నా అందాల సిరికి నా ప్రేమ లేఖ,
 “పరిచయమే వద్దు అనుకున్నా కానీ.. ప్రాణమై పోయావు...
@@ -190,7 +222,7 @@
 నీతోనే నా 75 సంవత్సరాల జీవితాన్ని పంచుకోవాలని అనుకున్న నా కోసం నువ్వు ఎంత చేయాలి..!
 నేను నా చివరి శ్వాస వరకు నీకు తోడుగా ధైర్యంగా ఉంటాను పాప. నాకు ఒక్క ఛాన్స్ ఇస్తావా పాప....❤️❤️❤️
  
-                                                   నీ ప్రేమతో,
+                                                    నీ ప్రేమతో,
                                                 గుర్రం పురుషోత్తం రెడ్డి
   </div>
 
@@ -211,6 +243,30 @@
 
 <script>
   const phoneNumber = "919963881226";
+  const audio = document.getElementById("bgMusic");
+  const musicBtn = document.getElementById("musicToggle");
+
+  // Handles playing and pausing music
+  function toggleMusic() {
+    if (audio.paused) {
+      audio.play();
+      musicBtn.innerText = "⏸️ Pause Music";
+    } else {
+      audio.pause();
+      musicBtn.innerText = "🎵 Play Music";
+    }
+  }
+
+  // Plays music automatically on first click anywhere (bypasses browser autoplay blocks)
+  document.body.addEventListener('click', function() {
+    if (audio.paused) {
+      audio.play().then(() => {
+        musicBtn.innerText = "⏸️ Pause Music";
+      }).catch(() => {
+        // Autoplay blocked until direct button press
+      });
+    }
+  }, { once: true });
 
   function sendToWhatsApp() {
     const response = document.getElementById("responseBox").value.trim();
@@ -221,7 +277,6 @@
     
     document.getElementById("output").innerText = "Redirecting to WhatsApp...";
     
-    // Encodes custom text and opens WhatsApp
     const encodedMessage = encodeURIComponent("Siri's reply: " + response);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     
